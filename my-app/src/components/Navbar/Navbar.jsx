@@ -11,19 +11,8 @@ export default function Navbar() {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    onUserStateChanged((user) => {
-      console.log(user);
-      setUser(user);
-    });
+    onUserStateChanged(setUser);
   }, []);
-
-  const handleLogin = () => {
-    login().then((user) => setUser(user));
-  };
-
-  const handleLogout = () => {
-    logout().then((user) => setUser(user));
-  };
 
   return (
     <header className="header-navbar">
@@ -38,8 +27,8 @@ export default function Navbar() {
           <BsFillPencilFill />
         </Link>
         {/* firebase 로그인 되면 로그인 아니면 로그아웃 */}
-        {!user && <button onClick={handleLogin}>Login</button>}
-        {user && <button onClick={handleLogout}>Logout</button>}
+        {!user && <button onClick={login}>Login</button>}
+        {user && <button onClick={logout}>Logout</button>}
       </nav>
     </header>
   );
