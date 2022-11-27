@@ -11,10 +11,6 @@ export const GlobalStyle = createGlobalStyle`
 
       }
     button{
-      padding: 0;
-      margin: 0;
-      background: none;
-      border: none;
       font: inherit;
     }
      
