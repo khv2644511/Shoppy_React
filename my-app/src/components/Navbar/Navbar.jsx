@@ -2,10 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPencilFill } from "react-icons/bs";
-import { login } from "../../api/firebase";
+import { login, logout } from "../../api/firebase";
 import "./navbar.css";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [user, setUser] = useState();
+  const handleLogin = () => {
+    login().then((user) => setUser(user));
+  };
+
+  const handleLogout = () => {
+    logout().then((user) => setUser(user));
+  };
+
   return (
     <header className="header-navbar">
       <Link to="/" className="header-logo">
@@ -18,7 +28,9 @@ export default function Navbar() {
         <Link to="/products/new" className="header-nav-pencil">
           <BsFillPencilFill />
         </Link>
-        <button onClick={login}>Login</button>
+        {/* firebase 로그인 되면 로그인 아니면 로그아웃 */}
+        {!user && <button onClick={handleLogin}>Login</button>}
+        {user && <button onClick={handleLogout}>Logout</button>}
       </nav>
     </header>
   );

@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
+// https://firebase.google.com/docs/auth/web/google-signin
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -22,6 +27,11 @@ export async function login() {
       return user;
     })
     .catch(console.error);
+}
+
+// 사용자가 로그아웃 할 때 실행되는 함수
+export async function logout() {
+  return signOut(auth).then(() => null);
 }
 
 // Handle Errors here.
