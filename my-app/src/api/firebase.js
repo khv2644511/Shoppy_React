@@ -4,8 +4,10 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 // https://firebase.google.com/docs/auth/web/google-signin
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -34,12 +36,8 @@ export async function logout() {
   return signOut(auth).then(() => null);
 }
 
-// Handle Errors here.
-//   const errorCode = error.code;
-//   const errorMessage = error.message;
-//   // The email of the user's account used.
-//   const email = error.customData.email;
-//   // The AuthCredential type that was used.
-//   const credential = GoogleAuthProvider.credentialFromError(error);
-//   // ...
-// }
+export function onUserStateChanged(callback) {
+  onAuthStateChanged(auth, (user) => {
+    callback(user);
+  });
+}

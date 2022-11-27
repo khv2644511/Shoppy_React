@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPencilFill } from "react-icons/bs";
 import { login, logout } from "../../api/firebase";
 import "./navbar.css";
 import { useState } from "react";
+import { onUserStateChanged } from "../../api/firebase";
 
 export default function Navbar() {
   const [user, setUser] = useState();
+
+  useEffect(() => {
+    onUserStateChanged((user) => {
+      console.log(user);
+      setUser(user);
+    });
+  }, []);
+
   const handleLogin = () => {
     login().then((user) => setUser(user));
   };
