@@ -6,6 +6,7 @@ import { login, logout } from "../../api/firebase";
 import "./navbar.css";
 import { useState } from "react";
 import { onUserStateChanged } from "../../api/firebase";
+import User from "../User/User";
 
 export default function Navbar() {
   const [user, setUser] = useState();
@@ -26,7 +27,7 @@ export default function Navbar() {
         <Link to="/products/new" className="header-nav-pencil">
           <BsFillPencilFill />
         </Link>
-        {/* firebase 로그인 되면 로그인 아니면 로그아웃 */}
+        {user && <User user={user} />}
         {!user && <button onClick={login}>Login</button>}
         {user && <button onClick={logout}>Logout</button>}
       </nav>

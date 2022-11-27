@@ -1,0 +1,19 @@
+.header-user {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  border-radius: 50%;
+  margin: 10px;
+}
+/* 
+.user-name {
+  display: none;
+} */
+
+@media screen and (max-width: 600px) {
+  .user-name {
+    display: none;
+  }
+}

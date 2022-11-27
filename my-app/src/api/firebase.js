@@ -22,7 +22,12 @@ const provider = new GoogleAuthProvider();
 
 // 사용자가 로그인 할 때 함수 실행
 export function login() {
-  signInWithPopup(auth, provider).catch(console.error);
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(console.error);
 }
 
 // 사용자가 로그아웃 할 때 실행되는 함수
