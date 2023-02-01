@@ -11,7 +11,7 @@ import Button from "../ui/Button";
 import { useAuthcontext } from "../context/AuthContext";
 
 export default function Navbar() {
-  const { user, login, logout } = useAuthcontext();
+  // const { user, login, logout } = useAuthcontext();
   return (
     <header className="header-navbar">
       <Link to="/" className="header-logo">
@@ -20,15 +20,11 @@ export default function Navbar() {
       </Link>
       <nav className="header-nav">
         <Link to="/products">Products</Link>
-        {user && <Link to="/carts">Carts</Link>}
-        {user && user.isAdmin && (
-          <Link to="/products/new" className="header-nav-pencil">
-            <BsFillPencilFill />
-          </Link>
-        )}
-        {user && <User user={user} />}
-        {!user && <Button text={"Login"} onClick={login} />}
-        {user && <Button text={"Logout"} onClick={logout} />}
+        <Link to="/carts">Carts</Link>
+        <Link to="/products/new" className="header-nav-pencil">
+          <BsFillPencilFill />
+        </Link>
+        <Button text={"Login"} onClick={login} />
       </nav>
     </header>
   );
