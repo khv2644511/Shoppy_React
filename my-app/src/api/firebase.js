@@ -24,22 +24,13 @@ const auth = getAuth();
 const database = getDatabase(app);
 
 // 사용자가 로그인 할 때 함수 실행
-export async function login() {
-  return signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-      return user;
-    })
-    .catch(console.error);
+export function login() {
+  signInWithPopup(auth, provider).catch(console.error);
 }
 
 // 사용자가 로그아웃 할 때 실행되는 함수
-export async function logout() {
-  return signOut(auth).then(() => {
-    return null;
-  });
+export function logout() {
+  signOut(auth).catch(console.error);
 }
 
 export function onUserStateChanged(callback) {

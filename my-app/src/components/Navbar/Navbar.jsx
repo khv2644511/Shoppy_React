@@ -19,13 +19,6 @@ export default function Navbar() {
     });
   }, []);
 
-  const handleLogin = () => {
-    login().then((user) => setUser(user));
-  };
-
-  const handleLogout = () => {
-    logout().then((user) => setUser(user));
-  };
   // const { user, login, logout } = useAuthcontext();
   return (
     <header className="header-navbar">
@@ -39,8 +32,9 @@ export default function Navbar() {
         <Link to="/products/new" className="header-nav-pencil">
           <BsFillPencilFill />
         </Link>
-        {!user && <Button text={"Login"} onClick={handleLogin} />}
-        {user && <Button text={"Logout"} onClick={handleLogout} />}
+        {user && <User user={user} />}
+        {!user && <Button text={"Login"} onClick={login} />}
+        {user && <Button text={"Logout"} onClick={logout} />}
       </nav>
     </header>
   );
