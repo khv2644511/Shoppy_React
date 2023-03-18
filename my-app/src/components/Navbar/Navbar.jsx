@@ -29,9 +29,11 @@ export default function Navbar() {
       <nav className="header-nav">
         <Link to="/products">Products</Link>
         <Link to="/carts">Carts</Link>
-        <Link to="/products/new" className="header-nav-pencil">
-          <BsFillPencilFill />
-        </Link>
+        {user && user.isAdmin && (
+          <Link to="/products/new" className="header-nav-pencil">
+            <BsFillPencilFill />
+          </Link>
+        )}
         {user && <User user={user} />}
         {!user && <Button text={"Login"} onClick={login} />}
         {user && <Button text={"Logout"} onClick={logout} />}
