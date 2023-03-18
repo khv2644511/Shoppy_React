@@ -15,11 +15,11 @@ export default function Navbar() {
 
   useEffect(() => {
     onUserStateChanged((user) => {
+      // console.log(user);
       setUser(user);
     });
   }, []);
 
-  // const { user, login, logout } = useAuthcontext();
   return (
     <header className="header-navbar">
       <Link to="/" className="header-logo">
