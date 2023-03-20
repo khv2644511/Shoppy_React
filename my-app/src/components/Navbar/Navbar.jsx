@@ -11,14 +11,7 @@ import Button from "../ui/Button";
 import { useAuthcontext } from "../context/AuthContext";
 
 export default function Navbar() {
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    onUserStateChanged((user) => {
-      // console.log(user);
-      setUser(user);
-    });
-  }, []);
+  const { user, login, logout } = useAuthcontext();
 
   return (
     <header className="header-navbar">
@@ -28,7 +21,7 @@ export default function Navbar() {
       </Link>
       <nav className="header-nav">
         <Link to="/products">Products</Link>
-        <Link to="/carts">Carts</Link>
+        {user && <Link to="/carts">Carts</Link>}
         {user && user.isAdmin && (
           <Link to="/products/new" className="header-nav-pencil">
             <BsFillPencilFill />
