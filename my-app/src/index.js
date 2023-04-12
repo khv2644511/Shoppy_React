@@ -6,11 +6,11 @@ import App from "./App";
 import Home from "./pages/Home";
 import AllProducts from "./pages/AllProducts";
 import ProductDetail from "./pages/ProductDetail";
-import NewProduct from "./pages/NewProduct";
 import MyCart from "./pages/MyCart";
 import NotFound from "./pages/NotFound";
 import { GlobalStyle } from "./GlobalStyle";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import NewProduct from "./pages/NewProduct/NewProduct";
 
 const router = createBrowserRouter([
   {

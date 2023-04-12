@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { addNewProduct } from "../api/firebase";
-import { uploadImage } from "../api/uploader";
-import Button from "../components/ui/Button";
+import { addNewProduct } from "../../api/firebase";
+import { uploadImage } from "../../api/uploader";
+import Button from "../../components/ui/Button";
+import styles from "./NewProduct.module.css";
 
 export default function NewProduct() {
   const [product, setProduct] = useState({});
@@ -37,11 +38,17 @@ export default function NewProduct() {
   };
 
   return (
-    <section>
-      <h2>새로운 제품 등록</h2>
-      {success && <p>✅{success}</p>}
-      {file && <img src={URL.createObjectURL(file)} alt="local file" />}
-      <form onSubmit={handleSubmit}>
+    <section className={styles.sec}>
+      <h2 className={styles.h2}>새로운 제품 등록</h2>
+      {success && <p className={styles.successP}>✅ {success}</p>}
+      {file && (
+        <img
+          className={styles.img}
+          src={URL.createObjectURL(file)}
+          alt="local file"
+        />
+      )}
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="file"
           accept="image/*"

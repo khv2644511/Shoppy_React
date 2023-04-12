@@ -1,0 +1,27 @@
+.sec {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2 {
+  margin: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.img {
+  width: 80%;
+  height: 80%;
+  margin: 10px auto;
+}
+
+.successP {
+  margin: 5px;
+}
