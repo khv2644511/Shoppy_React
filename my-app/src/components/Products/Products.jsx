@@ -1,8 +1,8 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../api/firebase";
-import ProductCard from "./ProductCard";
-
+import { getProducts } from "../../api/firebase";
+import styles from "./Products.module.css";
+import ProductCard from "../ProductCard/ProductCard";
 export default function Products() {
   const {
     isLoading,
@@ -14,7 +14,7 @@ export default function Products() {
     <>
       {isLoading && <p>Loading...</p>}
       {isError && <p>{error}</p>}
-      <ul>
+      <ul className={styles.ul}>
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />
