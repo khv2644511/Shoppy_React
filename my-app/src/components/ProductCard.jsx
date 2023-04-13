@@ -5,7 +5,7 @@ export default function ProductCard({
 }) {
   return (
     <li>
-      <img src={image} />
+      <img src={image} alt={title} />
       <div>
         <h3>{title}</h3>
         <p>{`￦${price}`}</p>
