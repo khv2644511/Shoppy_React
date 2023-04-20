@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import styles from "./ProductDetail.module.css";
+import { useAuthcontext } from "../../context/AuthContext";
 
 export default function ProductDetail() {
+  const { user } = useAuthcontext();
   const {
     state: {
       product: { id, image, title, category, price, description, options },

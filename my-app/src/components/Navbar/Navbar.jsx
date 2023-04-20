@@ -8,7 +8,7 @@ import { useState } from "react";
 import { onUserStateChanged } from "../../api/firebase";
 import User from "../User/User";
 import Button from "../ui/Button";
-import { useAuthcontext } from "../context/AuthContext";
+import { useAuthcontext } from "../../context/AuthContext";
 
 export default function Navbar() {
   const { user, login, logout } = useAuthcontext();

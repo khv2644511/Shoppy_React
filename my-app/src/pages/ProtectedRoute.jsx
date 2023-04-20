@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuthcontext } from "../components/context/AuthContext";
+import { useAuthcontext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 export default function ProtectedRoute({ children, requiredAdmin }) {
   // 로그인한 사용자가 있는지 확인
