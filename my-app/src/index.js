@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import Home from "./pages/Home";
 import AllProducts from "./pages/AllProducts";
-import ProductDetail from "./pages/ProductDetail";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import MyCart from "./pages/MyCart";
 import NotFound from "./pages/NotFound";
 import { GlobalStyle } from "./GlobalStyle";

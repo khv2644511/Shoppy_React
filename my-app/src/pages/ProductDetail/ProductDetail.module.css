@@ -1,0 +1,66 @@
+.category {
+  margin: 10px 4px 0;
+  color: gray;
+  padding: 10px;
+}
+
+.sec {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .sec {
+    flex-direction: column;
+  }
+}
+
+.img {
+  width: 100%;
+  flex-basis: 60%;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  padding: 3px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+  padding: 5px 0;
+}
+
+.description {
+  padding: 5px 0;
+  font-size: 1.2rem;
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  padding: 10px 0;
+}
+
+.label {
+  font-weight: bold;
+  color: var(--brand-color);
+}
+
+.select {
+  padding: 5px;
+  margin: 0 3px;
+  flex: 1;
+  outline: none;
+  border: 1px dashed var(--brand-color);
+}
