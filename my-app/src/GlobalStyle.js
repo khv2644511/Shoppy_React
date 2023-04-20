@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
     * {
       text-decoration-line: none;
       color: inherit;
+      --brand-color: #f17471
     }
     html,body{
-
       }
     button{
       font: inherit;
