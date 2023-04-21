@@ -6,6 +6,7 @@ import "./navbar.css";
 import User from "../User/User";
 import Button from "../ui/Button";
 import { useAuthcontext } from "../../context/AuthContext";
+import CartStatus from "../ui/CartStatus";
 
 export default function Navbar() {
   const { user, login, logout } = useAuthcontext();
@@ -18,7 +19,11 @@ export default function Navbar() {
       </Link>
       <nav className="header-nav">
         <Link to="/products">Products</Link>
-        {user && <Link to="/carts">Carts</Link>}
+        {user && (
+          <Link to="/carts">
+            <CartStatus />
+          </Link>
+        )}
         {user && user.isAdmin && (
           <Link to="/products/new" className="header-nav-pencil">
             <BsFillPencilFill />

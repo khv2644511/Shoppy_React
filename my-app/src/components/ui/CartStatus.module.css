@@ -1,0 +1,22 @@
+.div {
+  position: relative;
+}
+
+.cartIcon {
+  font-size: 1.8rem;
+}
+.count {
+  font-size: 0.8rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--brand-color);
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+}
