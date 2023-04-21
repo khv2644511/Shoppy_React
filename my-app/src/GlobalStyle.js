@@ -6,7 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     * {
       text-decoration-line: none;
       color: inherit;
-      --brand-color: #f17471
+      --brand-color: #f17471;
+      --gray-color : #f1eeee;
     }
     html,body{
       }
