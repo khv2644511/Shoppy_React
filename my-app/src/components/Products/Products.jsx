@@ -9,7 +9,14 @@ export default function Products() {
     isError,
     data: products,
     error,
-  } = useQuery(["products"], () => getProducts());
+  } = useQuery(
+    ["products"],
+    () => getProducts(),
+    { staleTime: 2000 * 60 },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
   return (
     <>
       {isLoading && <p>Loading...</p>}
